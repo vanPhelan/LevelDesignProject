@@ -1,2 +1,2 @@
-#LevelDesignProject
+# LevelDesignProject
 This is an example project originally built from https://docs.unrealengine.com/en-US/BuildingWorlds/LDQuickStart/index.html and https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/CPPProgrammingQuickStart/index.html. The floating behavior of FloatingActor was moved into its own component, and examples of UPROPERTY and UFUNCTION were added, along with a blueprint that utilizes each.
