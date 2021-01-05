@@ -12,6 +12,13 @@ AFloatingActor::AFloatingActor()
 	//Create and attach the StaticMeshComponent
 	VisualMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	VisualMesh->SetupAttachment(RootComponent);
+	
+	//Create the FloatComponent
+	//As an ActorComponent, FloatComponent doesn't need to be attached
+	FloatingComponent = CreateDefaultSubobject<UFloatComponent>(TEXT("Float"));
+	
+	//The rest of this code retrieves a cube asset and assigns it to the StaticMeshComponent.
+	//I don't recommend doing this for redistributable code, but I left this functionality as an example.
 	//Get the cube asset
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeVisualAsset(TEXT("/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube"));
 	//Set the cube asset to the mesh component
@@ -19,10 +26,6 @@ AFloatingActor::AFloatingActor()
 		VisualMesh->SetStaticMesh(CubeVisualAsset.Object);
 		VisualMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
-
-	//Create the FloatComponent
-	//As an ActorComponent, FloatComponent doesn't need to be attached
-	FloatingComponent = CreateDefaultSubobject<UFloatComponent>(TEXT("Float"));
 }
 
 // Called when the game starts or when spawned
